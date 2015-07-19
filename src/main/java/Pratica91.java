@@ -16,8 +16,15 @@ public class Pratica91 {
         System.out.println(System.getProperty("os.name"));
         System.out.println(rt.availableProcessors());
         System.out.println(rt.totalMemory()/1048576);
-        System.out.println(rt.freeMemory()/1048576);
+        
+        if(rt.freeMemory()%1048576 > 524288)
+            System.out.println(((rt.freeMemory()/1048576) + 1));
+        
+        else
+            System.out.println(rt.freeMemory()/1048576);
+                
         System.out.println(rt.maxMemory()/1048576);
+
 
     }
 }
